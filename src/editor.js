@@ -47,7 +47,7 @@ class Editor extends React.Component {
     }, this);
   }
 
-  onDocumentChange(change) {
+  onDocumentChanged(change) {
     var app = this.context.app;
     if (change.isAffected(['body', 'nodes'])) {
       this.forceUpdate();
@@ -79,14 +79,8 @@ class Editor extends React.Component {
 
     components = components.concat(containerNode.nodes.map(function(nodeId) {
       var node = doc.get(nodeId);
-
       var ComponentClass = this.componentRegistry.get(node.type);
-
-      return $$(ComponentClass, {
-        key: node.id,
-        doc: doc,
-        node: node
-      });
+      return $$(ComponentClass, { key: node.id, doc: doc, node: node });
     }.bind(this)));
 
     return $$('div', {className: 'editor-component'},
@@ -104,7 +98,7 @@ class Editor extends React.Component {
     var doc = this.props.doc;
 
     doc.connect(this, {
-      'document:changed': this.onDocumentChange
+      'document:changed': this.onDocumentChanged
     });
 
     this.surfaceManager.registerSurface(this.surface, {
