@@ -3,9 +3,7 @@ var express = require('express');
 var path = require('path');
 var Substance = require("substance");
 var fs = require('fs');
-var sass = require('node-sass');
 var bodyParser = require('body-parser');
-var _ = require('lodash');
 
 var app = express();
 var port = process.env.PORT || 5000;

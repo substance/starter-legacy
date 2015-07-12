@@ -7,8 +7,6 @@
     "browserify": "^10.2.4",
     "es6ify": "^1.6.0",
     "express": "*",
-    "lodash": "^3.10.0",
-    "node-sass": "^3.2.0",
     "substance": "substance/substance#ced4a5bbed38e78ae2e0095e1efffca2711376d3",
     "substance-ui": "substance/ui#82390a35230e6e7eb1d671acf18946ce266cd0c3"
   },
