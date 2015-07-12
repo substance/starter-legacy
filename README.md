@@ -1,17 +1,19 @@
-# Archivist Writer
+# Substance Starter
+
+Official bare bones example of a Substance Editor. Install and play around. For documentation about Substance head over to http://github.com/substance/substance.
 
 ## Install
 
 Clone the repository.
 
 ```bash
-$ git clone https://github.com/substance/archivist-writer.git
+$ git clone https://github.com/substance/starter.git
 ```
 
 Navigate to the source directory.
 
 ```bash
-$ cd archivist-writer
+$ cd starter
 ```
 
 Install via npm

@@ -36,10 +36,6 @@ RichTextArticle.Prototype = function() {
       nodes: []
     });
   };
-
-  // this.documentDidLoad = function() {
-  //   Interview.super.prototype.documentDidLoad.call(this);
-  // };
 };
 
 Substance.inherit(RichTextArticle, Document);
@@ -49,9 +45,7 @@ RichTextArticle.schema = schema;
 RichTextArticle.fromJson = function(json) {
   var doc = new RichTextArticle();
   doc.loadSeed(json);
-  doc.documentDidLoad();
   return doc;
 };
-
 
 module.exports = RichTextArticle;
