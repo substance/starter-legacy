@@ -5,9 +5,8 @@ var $$ = React.createElement;
 
 class Paragraph extends React.Component {
   render() {
-    return $$("div", { className: "content-node text", "data-id": this.props.node.id },
+    return $$("div", { className: "content-node paragraph", "data-id": this.props.node.id },
       $$(TextProperty, {
-        ref: "textProp",
         doc: this.props.doc,
         path: [ this.props.node.id, "content"]
       })
