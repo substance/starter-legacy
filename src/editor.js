@@ -86,7 +86,8 @@ class Editor extends React.Component {
       $$('div', {className: 'toolbar'},
         $$(ToolComponent, { tool: 'emphasis', title: 'Emphasis', classNames: ['button', 'tool']}, "Emphasis"),
         $$(ToolComponent, { tool: 'strong', title: 'Strong', classNames: ['button', 'tool']}, "Strong"),
-        $$(ToolComponent, { tool: 'highlight', title: 'Highlight', classNames: ['button', 'tool']}, "Highlight")
+        $$(ToolComponent, { tool: 'highlight', title: 'Highlight', classNames: ['button', 'tool']}, "Highlight"),
+        $$(ToolComponent, { tool: 'search_replace', title: 'Search and replace', classNames: ['button', 'tool']}, "Search&Replace")
       ),
       $$('div', {className: 'body-nodes', ref: 'bodyNodes', contentEditable: true, spellCheck: false},
         components

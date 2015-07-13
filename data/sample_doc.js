@@ -10,7 +10,8 @@ var sampleDoc = {
       "id": "body",
       "nodes": [
         "p1",
-        "p2"
+        "p2",
+        "p3"
       ]
     },
     "p1": {
@@ -22,6 +23,11 @@ var sampleDoc = {
       "type": "paragraph",
       "id": "p2",
       "content": 'Proin in luctus sapien, ultrices commodo augue. Phasellus ultrices commodo augue, in blandit nibh euismod nibh vitae erat luctus ac. Aliquam euismod nibh vitae erat pulvinar, at semper libero tincidunt. Nulla finibus est ac consequat consequat. Sed at condimentum purus. Aliquam vulputate ipsum ut justo posuere, quis varius risus finibus. Ut scelerisque laoreet vehicula. Nullam gravida fringilla justo, nec efficitur nunc sagittis et. Suspendisse nibh ligula, imperdiet id interdum et, sollicitudin non mauris. Suspendisse potenti. Suspendisse luctus iaculis nulla sed efficitur. Nullam sed viverra metus. Etiam dictum blandit enim tincidunt maximus. Nullam tempus nibh at varius interdum.'
+    },
+    "p3": {
+      "type": "paragraph",
+      "id": "p3",
+      "content": "Quisque et nulla justo. Nam tempor interdum mi, sit amet sollicitudin mauris ullamcorper malesuada. Aliquam ultricies eu sem vel dictum."
     },
     "strong1": {
       "id": "strong1",
