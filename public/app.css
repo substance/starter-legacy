@@ -49,6 +49,7 @@ body {
   font-family: Georgia;
   line-height: 20px;
   font-size: 17px;
+  color: #444;
 }
 
 .clipboard { background: blue; z-index: -1; visibility: hidden; }
@@ -97,6 +98,6 @@ body {
 }
 
 .highlight {
-  background: yellow;
+  background: rgba(255, 254, 99, 0.3);
 }
 
