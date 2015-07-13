@@ -1,13 +1,18 @@
 "use strict";
 
 var Substance = require('substance');
-
-var Paragraph = Substance.Document.Paragraph;
-var Emphasis = Substance.Document.Emphasis;
-var Strong = Substance.Document.Strong;
-
-var Substance = require('substance');
 var Document = Substance.Document;
+
+var Paragraph = Document.Paragraph;
+var Emphasis = Document.Emphasis;
+var Strong = Document.Strong;
+
+var Highlight = Document.ContainerAnnotation.extend({
+  name: 'highlight',
+  properties: {
+    created_at: 'date'
+  }
+});
 
 var schema = new Document.Schema("rich-text-article", "1.0.0");
 
@@ -19,6 +24,7 @@ schema.addNodes([
   Paragraph,
   Emphasis,
   Strong,
+  Highlight
 ]);
 
 var RichTextArticle = function() {

@@ -96,3 +96,7 @@ body {
   font-style: italic;
 }
 
+.highlight {
+  background: yellow;
+}
+

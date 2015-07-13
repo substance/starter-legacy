@@ -32,7 +32,17 @@ var sampleDoc = {
       ],
       "startOffset": 20,
       "endOffset": 50
-    }
+    },
+
+    "h1": {
+      "id": "h1",
+      "type": "highlight",
+      "container": "body",
+      "startPath": ["p1", "content"],
+      "startOffset": 100,
+      "endPath": ["p2", "content"],
+      "endOffset": 50
+    },
   }
 };
 

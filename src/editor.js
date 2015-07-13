@@ -76,7 +76,6 @@ class Editor extends React.Component {
     // ---------
 
     var components = [];
-
     components = components.concat(containerNode.nodes.map(function(nodeId) {
       var node = doc.get(nodeId);
       var ComponentClass = this.componentRegistry.get(node.type);
@@ -86,7 +85,8 @@ class Editor extends React.Component {
     return $$('div', {className: 'editor-component'},
       $$('div', {className: 'toolbar'},
         $$(ToolComponent, { tool: 'emphasis', title: 'Emphasis', classNames: ['button', 'tool']}, "Emphasis"),
-        $$(ToolComponent, { tool: 'strong', title: 'Strong', classNames: ['button', 'tool']}, "Strong")
+        $$(ToolComponent, { tool: 'strong', title: 'Strong', classNames: ['button', 'tool']}, "Strong"),
+        $$(ToolComponent, { tool: 'highlight', title: 'Highlight', classNames: ['button', 'tool']}, "Highlight")
       ),
       $$('div', {className: 'body-nodes', ref: 'bodyNodes', contentEditable: true, spellCheck: false},
         components
@@ -114,26 +114,22 @@ class Editor extends React.Component {
 
     this.clipboard.attach(React.findDOMNode(this));
 
-
-
     // Needed?
-    this.forceUpdate(function() {
-      this.surface.rerenderDomSelection();
-    }.bind(this));
+    // this.forceUpdate(function() {
+    //   this.surface.rerenderDomSelection();
+    // }.bind(this));
   }
 
   componentWillUnmount() {
     var doc = this.props.doc;
     doc.disconnect(this);
-    // app.unregisterSurface(surface);
-    
     this.surface.dispose();
     this.clipboard.detach(React.findDOMNode(this));
     this.surfaceManager.dispose();
   }
 
   componentDidUpdate() {
-    // HACK: when the state is changed this and particularly TextProperties
+    // When the state is changed this and particularly TextProperties
     // get rerendered (e.g., as the highlights might have changed)
     // Unfortunately we loose the DOM selection then.
     // Thus, we are resetting it here, but(!) delayed as otherwise the surface itself
