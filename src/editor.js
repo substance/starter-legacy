@@ -16,6 +16,8 @@ var components = require('./components');
 var tools = require('./tools');
 
 
+var SearchReplaceToolComponent = require('./components/search_replace_tool_component');
+
 // Editor
 // ----------------
 // 
@@ -48,7 +50,6 @@ class Editor extends React.Component {
   }
 
   onDocumentChanged(change) {
-    var app = this.context.app;
     if (change.isAffected(['body', 'nodes'])) {
       this.forceUpdate();
     }
@@ -87,7 +88,11 @@ class Editor extends React.Component {
         $$(ToolComponent, { tool: 'emphasis', title: 'Emphasis', classNames: ['button', 'tool']}, "Emphasis"),
         $$(ToolComponent, { tool: 'strong', title: 'Strong', classNames: ['button', 'tool']}, "Strong"),
         $$(ToolComponent, { tool: 'highlight', title: 'Highlight', classNames: ['button', 'tool']}, "Highlight"),
-        $$(ToolComponent, { tool: 'search_replace', title: 'Search and replace', classNames: ['button', 'tool']}, "Search&Replace")
+
+        $$(SearchReplaceToolComponent, {tool: 'search_replace', doc: doc, containerId: 'body'})
+        // $$(ToolComponent, { tool: 'search_replace', title: 'Search and replace', classNames: ['button', 'tool']}
+        //   $$('input', {})
+        // )
       ),
       $$('div', {className: 'body-nodes', ref: 'bodyNodes', contentEditable: true, spellCheck: false},
         components

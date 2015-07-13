@@ -23,9 +23,7 @@ function searchInTextProperty(tx, args) {
     });
     // Store matches in reverse order, so the replace operations later are side effect free.
     matches.unshift(sel);
-    console.log(match.index + ' ' + matcher.lastIndex);
   }
-
   return matches;
 }
 
@@ -35,7 +33,6 @@ function searchAndReplaceInTextProperty(tx, args) {
     searchStr: args.searchStr
   });
 
-  // console.log('matches', matches);
   _.each(matches, function(match) {
     // Select match and replace it with replaceStr
     Document.Transformations.insertText(tx, {selection: match, text: args.replaceStr});
@@ -53,6 +50,8 @@ function searchAndReplace(tx, args) {
   if (!_.isString(args.replaceStr)) {
     throw new Error("Argument 'replaceStr' is mandatory and must be a string.");
   }
+
+  console.log('search', args.searchStr, 'and replace with', args.replaceStr);
 
   var container = tx.get(args.containerId);
   var components = container.getComponents();

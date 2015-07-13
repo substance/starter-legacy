@@ -70,7 +70,7 @@ body {
   color: #fff;
 }
 
-.button.disabled {
+.disabled {
   opacity: 0.3;
 }
 
@@ -101,3 +101,21 @@ body {
   background: rgba(255, 254, 99, 0.3);
 }
 
+
+/* Search & Replace Tool
+------------------------------------------------------- */
+
+.search-replace-tool-component {
+  float: right;
+  font-size: 12px;
+}
+
+.search-replace-tool-component .label {
+  color: #888;
+  padding: 0px 5px;
+  display: inline-block;
+}
+
+.search-replace-tool-component input {
+  display: inline-block;
+}
